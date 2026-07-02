@@ -1,0 +1,77 @@
+{
+    "title": "API MCP Wrapper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "action": {
+            "title": "Action",
+            "type": "string",
+            "description": "The API action to perform.",
+            "editor": "select",
+            "enum": ["weather", "currency", "ip_lookup", "holidays", "exchange_rates", "uuid"],
+            "enumTitles": [
+                "🌤 Weather — Get current weather for a city",
+                "💱 Currency — Convert currency amounts",
+                "🌐 IP Lookup — Geolocate an IP address",
+                "📅 Holidays — Get public holidays for a country/year",
+                "📈 Exchange Rates — Get all exchange rates for a base currency",
+                "🔑 UUID — Generate a UUID v4"
+            ],
+            "prefill": "weather"
+        },
+        "city": {
+            "title": "City (for weather)",
+            "type": "string",
+            "description": "City name to get weather for.",
+            "editor": "textfield",
+            "prefill": "London"
+        },
+        "from": {
+            "title": "From Currency (for currency conversion)",
+            "type": "string",
+            "description": "Source currency code (e.g. USD).",
+            "editor": "textfield",
+            "prefill": "USD"
+        },
+        "to": {
+            "title": "To Currency (for currency conversion)",
+            "type": "string",
+            "description": "Target currency code (e.g. INR).",
+            "editor": "textfield",
+            "prefill": "INR"
+        },
+        "amount": {
+            "title": "Amount (for currency conversion)",
+            "type": "number",
+            "description": "Amount to convert.",
+            "prefill": 100
+        },
+        "ip": {
+            "title": "IP Address (for ip_lookup)",
+            "type": "string",
+            "description": "IP address to look up. Leave empty to look up the actor's own IP.",
+            "editor": "textfield"
+        },
+        "country": {
+            "title": "Country Code (for holidays)",
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code (e.g. US, IN, GB).",
+            "editor": "textfield",
+            "prefill": "US"
+        },
+        "year": {
+            "title": "Year (for holidays)",
+            "type": "integer",
+            "description": "Year to get holidays for.",
+            "prefill": 2025
+        },
+        "baseCurrency": {
+            "title": "Base Currency (for exchange_rates)",
+            "type": "string",
+            "description": "Base currency for all exchange rates (e.g. USD).",
+            "editor": "textfield",
+            "prefill": "USD"
+        }
+    },
+    "required": ["action"]
+}
