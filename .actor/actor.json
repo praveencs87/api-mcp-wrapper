@@ -6,8 +6,8 @@
     "version": "1.0",
     "input": "./input_schema.json",
     "dockerfile": "./Dockerfile",
-    "minMemoryMbytes": 128,
-    "maxMemoryMbytes": 256,
+    "minMemoryMbytes": 1024,
+    "maxMemoryMbytes": 4096,
     "pricingModel": "PAY_PER_EVENT",
     "pricingEvents": [
         {
@@ -19,6 +19,11 @@
             "eventName": "api-call",
             "pricePerEvent": 0.001,
             "description": "Charged per API call made ($1 per 1k calls)"
+        },
+        {
+            "eventName": "lead-extracted",
+            "pricePerEvent": 0.005,
+            "description": "Charged per lead extracted"
         }
     ],
     "isPublic": true,
@@ -31,7 +36,7 @@
     ],
     "defaultRunOptions": {
         "build": "latest",
-        "timeoutSecs": 60,
-        "memoryMbytes": 128
+        "timeoutSecs": 1800,
+        "memoryMbytes": 4096
     }
 }
