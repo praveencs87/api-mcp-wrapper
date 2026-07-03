@@ -1,42 +1,45 @@
 {
-    "actorSpecification": 1,
-    "name": "api-mcp-wrapper",
-    "title": "API MCP Wrapper — Weather, Currency, IP Lookup & More",
-    "description": "Call popular public APIs (weather, currency exchange, IP geolocation, public holidays) as Apify Actor runs — perfect for AI agent and MCP workflows.",
-    "version": "1.0",
-    "input": "./input_schema.json",
-    "dockerfile": "./Dockerfile",
-    "minMemoryMbytes": 1024,
-    "maxMemoryMbytes": 4096,
-    "pricingModel": "PAY_PER_EVENT",
-    "pricingEvents": [
-        {
-            "eventName": "apify-actor-start",
-            "pricePerEvent": 0.05,
-            "description": "Base fee for starting the actor"
-        },
-        {
-            "eventName": "api-call",
-            "pricePerEvent": 0.001,
-            "description": "Charged per API call made ($1 per 1k calls)"
-        },
-        {
-            "eventName": "lead-extracted",
-            "pricePerEvent": 0.005,
-            "description": "Charged per lead extracted"
-        }
-    ],
-    "isPublic": true,
-    "seoTitle": "API MCP Wrapper | Weather, Currency, IP Lookup for AI Agents",
-    "seoDescription": "Call weather, currency exchange, IP geolocation, and public holiday APIs as Apify Actor runs. Ideal for AI agent and MCP workflow integration.",
-    "categories": [
-        "DEVELOPER_TOOLS",
-        "AI",
-        "UTILITIES"
-    ],
-    "defaultRunOptions": {
-        "build": "latest",
-        "timeoutSecs": 1800,
-        "memoryMbytes": 4096
+  "actorSpecification": 1,
+  "name": "api-mcp-wrapper",
+  "title": "API MCP Wrapper — Weather, Currency, IP Lookup & More",
+  "description": "Call popular public APIs (weather, currency exchange, IP geolocation, public holidays) as Apify Actor runs — perfect for AI agent and MCP workflows.",
+  "version": "1.0",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "minMemoryMbytes": 1024,
+  "maxMemoryMbytes": 4096,
+  "pricingModel": "PAY_PER_EVENT",
+  "pricingEvents": [
+    {
+      "eventName": "apify-actor-start",
+      "pricePerEvent": 0.05,
+      "description": "Base fee for starting the actor"
+    },
+    {
+      "eventName": "api-call",
+      "pricePerEvent": 0.001,
+      "description": "Charged per API call made ($1 per 1k calls)"
+    },
+    {
+      "eventName": "lead-extracted",
+      "pricePerEvent": 0.005,
+      "description": "Charged per lead extracted"
     }
+  ],
+  "isPublic": true,
+  "seoTitle": "API MCP Wrapper | Weather, Currency, IP Lookup for AI Agents",
+  "seoDescription": "Call weather, currency exchange, IP geolocation, and public holiday APIs as Apify Actor runs. Ideal for AI agent and MCP workflow integration.",
+  "categories": [
+    "DEVELOPER_TOOLS",
+    "AI",
+    "UTILITIES"
+  ],
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 1800,
+    "memoryMbytes": 4096
+  },
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
 }
